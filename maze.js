@@ -18,6 +18,13 @@ function main() {
 
   })
 
+  $("#start").click(function(){
+  	$("#maze .boundary").removeClass("youlose");
+	
+	failed = false;
+
+  })
+
 }
 
 $(document).ready(main);
