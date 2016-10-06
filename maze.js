@@ -1,8 +1,8 @@
 function main() {
   
-  $("#boundary1").hover( function() {
+  $(".boundary").hover( function() {
 
-  	$(this).addClass("youlose");
+  	$("#maze .boundary").addClass("youlose");
 
   });
 
