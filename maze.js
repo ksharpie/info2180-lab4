@@ -1,43 +1,8 @@
-function main() {
-  
-  var status = "normal";
+window.onload = function(e){ 
+    var boundary1 = document.getElementById('boundary1');
 
-  $(".boundary").hover( function() {
-
-  	if (status == "normal")
-  	{
-
-  		$("#maze .boundary").addClass("youlose");
-
-  		document.getElementById("status").innerHTML = "Move your mouse over the \"S\" to begin. <br> You Lose!";
-
-  		status = "lost";
-  	}
-
-  });
-
-  $("#end").hover( function(){
-
-  	if ( status == "normal" ){
-
-  		 document.getElementById("status").innerHTML = "Move your mouse over the \"S\" to begin. <br> You Win!";
-
-  		 status = "won";
-
-  	}
-
-  })
-
-  $("#start").click(function(){
-
-  	$("#maze .boundary").removeClass("youlose");
-
-	document.getElementById("status").innerHTML = "Move your mouse over the \"S\" to begin.";	
-	
-	status = "normal";
-
-  })
-
+    boundary1.onmouseover = function(){
+        boundary1.setAttribute('class', 'boundary youlose');
+    }
 }
 
-$(document).ready(main);
