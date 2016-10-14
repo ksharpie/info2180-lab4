@@ -6,7 +6,7 @@ window.onload = function(e)
   var start = document.getElementById("start");
   var status = document.getElementById("status");
 
-  var gameStatus = "normal";
+  var gameStatus = "Inactive";
 
   for (var i=0; i<boundaries.length; i++)
   {
@@ -30,6 +30,26 @@ window.onload = function(e)
     {
       boundaries[i].setAttribute("class", "boundary");
       status.innerHTML = "Move your mouse over the \"S\" to begin.";
+      gameStatus = "normal";
+    }
+
+    document.onmouseover = function(mouse)
+    {
+      var left = maze.offsetLeft;
+      var right = maze.offsetRight;
+      var top = maze.offsetTop;
+      var bottom = maze.offsetBottom;
+      var x = mouse.clientX;
+      var y = mouse.clientY;
+
+      if((x<left)||(x>right)||(y<top)||(y>bottom))
+      {
+        for (var i=0;i<boundaries.length-1; i++)
+        {
+          boundaries[i].setAttribute("class", "boundary youlose");
+          status.innerHTML = "You Lose!";
+        }
+      }
     }
   }
 
